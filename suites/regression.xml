@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Test">
+    <test parallel="methods" thread-count="1" verbose="2" name="Regression">
+        <classes>
+            <class name="com.onelogin.codechallenge.functional.InputValidationTest"/>
+            <class name="com.onelogin.codechallenge.functional.CalculateTest"/>
+        </classes>
+    </test>
+</suite>
