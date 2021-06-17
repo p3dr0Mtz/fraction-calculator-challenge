@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="basePath">./logs</Property>
+        <Property name="loggingPattern">%d{HH:mm:ss,SSS} [%t] %-5level - %c{1} : %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile
+                name="executionFile"
+                fileName="${basePath}/test-execution.log"
+                filePattern="${basePath}/%d{yyyy-MM-dd}/test-execution-%i.%d{yyyy-MM-dd}.log.gz"
+                ignoreExceptions="false">
+            <PatternLayout>
+                <pattern>${loggingPattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="20 MB"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="50">
+                <Delete basePath="${basePath}" maxDepth="3">
+                    <IfFileName glob="*/test-*.log.gz">
+                        <IfLastModified age="30d">
+                            <IfAny>
+                                <IfAccumulatedFileCount exceeds="1"/>
+                            </IfAny>
+                        </IfLastModified>
+                    </IfFileName>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${loggingPattern}"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug" additivity="false">
+            <appender-ref ref="executionFile"/>
+            <appender-ref ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>
