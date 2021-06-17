@@ -1,6 +1,5 @@
 # fraction-calculator-challenge
 
-![Project Image](project-image-url)
 
 >Fraction Calculator - OneLogin Code Challenge.
 >
@@ -21,7 +20,7 @@ You're sections headers will be used to reference location of destination.
 
 Fraction Calculator
 
-Command line program in the language of your choice that will take operations on fractions as an input and produce a fractional result.
+Command line program that take operations on fractions as an input and produce a fractional result.
 
 Legal operators shall be *, /, +, - (multiply, divide, add, subtract)
 
