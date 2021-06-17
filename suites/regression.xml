@@ -3,8 +3,8 @@
 <suite name="Parallel Test">
     <test parallel="methods" thread-count="1" verbose="2" name="Regression">
         <classes>
-            <class name="com.onelogin.codechallenge.functional.InputValidationTest"/>
-            <class name="com.onelogin.codechallenge.functional.CalculateTest"/>
+            <class name="com.onelogin.fractioncalculator.functional.InputValidationTest"/>
+            <class name="com.onelogin.fractioncalculator.functional.CalculateTest"/>
         </classes>
     </test>
 </suite>
